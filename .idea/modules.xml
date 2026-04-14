@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Day04_code/Day04_code.iml" filepath="$PROJECT_DIR$/Day04_code/Day04_code.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Day08(面像对象)/Day08(面像对象).iml" filepath="$PROJECT_DIR$/Day08(面像对象)/Day08(面像对象).iml" />
+      <module fileurl="file://$PROJECT_DIR$/Day09/Day09.iml" filepath="$PROJECT_DIR$/Day09/Day09.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Day10(Sstring)/Day10(Sstring).iml" filepath="$PROJECT_DIR$/Day10(Sstring)/Day10(Sstring).iml" />
+      <module fileurl="file://$PROJECT_DIR$/Day11/Day11.iml" filepath="$PROJECT_DIR$/Day11/Day11.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Day13(static静态和继承)/Day13(static静态和继承).iml" filepath="$PROJECT_DIR$/Day13(static静态和继承)/Day13(static静态和继承).iml" />
+      <module fileurl="file://$PROJECT_DIR$/Day14/Day14.iml" filepath="$PROJECT_DIR$/Day14/Day14.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Day15/Day15.iml" filepath="$PROJECT_DIR$/Day15/Day15.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Day16(Math)/Day16(Math).iml" filepath="$PROJECT_DIR$/Day16(Math)/Day16(Math).iml" />
+      <module fileurl="file://$PROJECT_DIR$/Day17/Day17.iml" filepath="$PROJECT_DIR$/Day17/Day17.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Day19/Day19.iml" filepath="$PROJECT_DIR$/Day19/Day19.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Day20/Day20.iml" filepath="$PROJECT_DIR$/Day20/Day20.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Day21/Day21.iml" filepath="$PROJECT_DIR$/Day21/Day21.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Day8(面像对象 ,家庭作业)/Day8(面像对象 ,家庭作业).iml" filepath="$PROJECT_DIR$/Day8(面像对象 ,家庭作业)/Day8(面像对象 ,家庭作业).iml" />
+      <module fileurl="file://$PROJECT_DIR$/Love/Love.iml" filepath="$PROJECT_DIR$/Love/Love.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Day07_code/Math.iml" filepath="$PROJECT_DIR$/Day07_code/Math.iml" />
+      <module fileurl="file://D:/自己写的小程序/PuzzleGame.iml" filepath="D:/自己写的小程序/PuzzleGame.iml" />
+      <module fileurl="file://$PROJECT_DIR$/studentsystem/studentsystem.iml" filepath="$PROJECT_DIR$/studentsystem/studentsystem.iml" />
+    </modules>
+  </component>
+</project>
