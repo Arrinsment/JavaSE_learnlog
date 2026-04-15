@@ -14,8 +14,11 @@ public class StringDemo2 {
          String S1="Abc";
          String S2="abc";
         System.out.println(S1==S2);//false
-        boolean result= S1.equals(S2);//false
-        System.out.println(result);
+        //就是先去字符常量池中 创建一个s1并赋值为Abc ,然后在创建s2的时候去看看字符常量池有没有,有的话直接指向即可,然后和s1地址相同的,是true
+        //如果没有的话,那么在去创建一个即可,然后二者的地址是不同的,所以是false
+
+        boolean result= S1.equals(S2);
+        System.out.println(result);//false,这里Java 已经在底层对String的equals方法进行重写了,所以比较的是内容
 
         //用equalsIgnorecase,忽略大小写;
         boolean r= S1.equalsIgnoreCase(S2);//true
