@@ -11,7 +11,7 @@ public class GenericsDemo3 {
         //然后我们直接在工具类中去调用方法
         ListUtil.addAll(list,"aaa","bbb");
 
-        System.out.println(list);
+        System.out.println(list);//[aaa, bbb]
     }
 
 }

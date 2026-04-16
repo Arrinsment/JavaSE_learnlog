@@ -12,6 +12,14 @@ public class mySetDemo1 {
         //无序,不重复,无索引
         //set集合的方法基本上与collection的Api方法一致
 
+        /*1. Set系列集合的特点:
+                - 无序、不重复、无索引
+                - Set集合的方法上基本上与Collection的API一致
+        2. Set集合的实现类特点
+                - HashSet：无序、不重复、无索引
+                - LinkedList：有序、不重复、无索引
+                - TreeSet：可排序、不重复、无索引
+*/
 
         //利用set方式的集合添加字符串,并使用多种遍历方式
           //迭代器
@@ -60,7 +68,6 @@ public class mySetDemo1 {
         s.forEach( Str1-> System.out.println(Str1));//lishi
                                                     //zhangsan
                                                     //wangwu
-
 
 
 

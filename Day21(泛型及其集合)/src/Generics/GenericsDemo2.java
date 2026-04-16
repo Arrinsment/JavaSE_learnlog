@@ -3,6 +3,7 @@ package Generics;
 public class GenericsDemo2 {
     public static void main(String[] args) {
 
+        
         MyArraylist<Integer> list=new MyArraylist<>();
         list.add(1);
         list.add(2);

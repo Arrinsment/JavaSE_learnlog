@@ -6,7 +6,7 @@ public class ListUtil {
 
     //这里主要写写泛型方法
     //1.当我们不知道具体形参方法的时候:
-    //像GenericsDemo2 那样直接在类名后面去写<E>
+    //像MyArraylist 那样直接在类名后面去写<E>
     //或者直接在方法static旁边去写个<E>
 
 

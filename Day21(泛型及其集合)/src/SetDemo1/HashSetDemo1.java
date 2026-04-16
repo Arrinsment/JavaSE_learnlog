@@ -36,6 +36,5 @@ public class HashSetDemo1 {
         System.out.println("acd".hashCode());
 
 
-
     }
 }
