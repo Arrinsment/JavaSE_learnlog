@@ -1,3 +1,5 @@
+package Demo1;
+
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -31,10 +33,10 @@ public  class pokerGame {
 
     public   pokerGame(){
 
-           ArrayList<String>dipai=new ArrayList<>();
-           ArrayList<String>player1=new ArrayList<>();
-           ArrayList<String>player2=new ArrayList<>();
-           ArrayList<String>player3=new ArrayList<>();
+        ArrayList<String>dipai=new ArrayList<>();
+        ArrayList<String>player1=new ArrayList<>();
+        ArrayList<String>player2=new ArrayList<>();
+        ArrayList<String>player3=new ArrayList<>();
 
         //洗牌:利用Collections中的shuffle方法去把牌都打乱
         Collections.shuffle(list);
@@ -58,7 +60,7 @@ public  class pokerGame {
             }
 
         }
-      //发牌
+        //发牌
         lookPoker("底牌",dipai);
         lookPoker("钢脑壳",player1);
         lookPoker("大帅比",player2);
