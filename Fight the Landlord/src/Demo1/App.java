@@ -4,7 +4,6 @@ public class App {
     public static void main(String[] args) {
 
 
-
         //这里先进行控制台版的斗地主的书写
         //完成控制台版的三步：
         //准备牌
@@ -17,5 +16,5 @@ public class App {
 
         new pokerGame();
 
-    }
+            }
 }

@@ -82,6 +82,9 @@ public class pokerGameDemo2 {
         lookpoker(player2,"大帅逼");
         lookpoker(dipai,"蛋筒");
     }
+
+
+
     public  void lookpoker(TreeSet<Integer>list,String name){
         System.out.print(name+"=");
         for (Integer i : list) {
