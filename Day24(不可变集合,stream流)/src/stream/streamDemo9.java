@@ -61,6 +61,7 @@ public class streamDemo9 {
         String[] S = list.stream().toArray(new IntFunction<String[]>() {
             @Override
             public String[] apply(int value) {
+                //value代表元素中的个数:
                 return new String[value];
             }
         });
