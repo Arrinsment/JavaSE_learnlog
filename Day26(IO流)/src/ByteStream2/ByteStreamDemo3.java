@@ -18,16 +18,19 @@ public class ByteStreamDemo3 {
 
 
         //二.去循环读取数据
+        //不可能读取到-1,因为去读会先读取-,在去读取1
         int a;
         while((a=fos.read())!=-1){
             System.out.print(a+" ");
         }
+
 
        //不要写成这样,因为read相当于一个指针会不断向右边去读取,你只有打印的时候才会打印指到的指,并不能所哟都打印
         /*while(fos.read()!=-1){
             System.out.print(fos.read());
         }
         */
+
 
         //三.释放资源
         fos.close();
