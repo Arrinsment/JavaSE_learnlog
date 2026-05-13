@@ -19,7 +19,8 @@ public class charStreamDemo2 {
         第三步：释放资源
         public void close()    释放资源/关流
         */
-        //这里我们演示,利用char字符数组,一次性去读取多个数据
+
+        //这里我们演示reader的有参构造,利用char字符数组,一次性去读取多个数据
 
 
         char[] ch=new char[2];//这里表示一次性去读取2个数据
@@ -46,6 +47,8 @@ public class charStreamDemo2 {
 
         //最后去释放资源
         f.close();
+
+        //还是要有目标感
 
 
     }
