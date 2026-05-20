@@ -8,7 +8,7 @@ import java.nio.charset.Charset;
 public class convertstreamDemo1 {
     public static void main(String[] args) throws IOException {
 
-        //这里主要去讲讲转换流,这里的conveert就是转换的意思
+        //这里主要去讲讲转换流,这里的convert就是转换的意思
         //转换流,简单去说就是字符流和字节流之间的一个媒介
 
         /*
