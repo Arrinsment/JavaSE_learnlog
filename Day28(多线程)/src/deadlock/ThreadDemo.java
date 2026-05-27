@@ -22,7 +22,6 @@ public class ThreadDemo {
         t2.setName("线程B");
 
 
-
         t1.start();
         t2.start();
 
