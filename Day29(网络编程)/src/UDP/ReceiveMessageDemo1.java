@@ -31,6 +31,7 @@ public class ReceiveMessageDemo1 {
         byte []bytes=new byte[1024*1024];
         DatagramPacket dp=new DatagramPacket(bytes,bytes.length);
 
+
         //程序执行到这里的时候会在这里去死等,等待发送端去发送数据
         ds.receive(dp);
 

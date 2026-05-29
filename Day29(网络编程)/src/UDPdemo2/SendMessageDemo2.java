@@ -28,6 +28,7 @@ public class SendMessageDemo2 {
 
             byte[] bytes = s.getBytes();
             //发送到本机的ip地址
+            //把这个ip换成255.255.255.255就是广播
             InetAddress address = InetAddress.getByName("127.0.0.1");
             //设置一个端口号
             int port=10086;
