@@ -57,7 +57,7 @@ public class hutoolDemo1 {
         list.add("aaa");
         list.add("aaa");
         list.add("aaa");
-        FileUtil.writeLines(list,touch,"UTF-8");
+        FileUtil.appendLines(list,touch,"UTF-8");
 
 
 

@@ -22,10 +22,11 @@ public class Server {
 
         Socket socket = s.accept();
 
-
         BufferedInputStream bis=new BufferedInputStream(socket.getInputStream());
         String str = UUID.randomUUID().toString().replace("-", "");
+        //细节2：如果文件不存在会创建一个新的文件，但是要保证父级路径是存在的。
         BufferedOutputStream bos=new BufferedOutputStream(new FileOutputStream("D:\\Javacode\\JavaSE_learnlog\\Day29(网络编程)\\image2\\"+str+".jpg"));
+
 
         byte[]bytes=new byte[1024];  //"D:\\Javacode\\JavaSE_learnlog\\Day29(网络编程)\\image2\\
 
@@ -39,8 +40,6 @@ public class Server {
         //close() 内部会先调用 flush()，把缓冲区数据发出去，然后再释放资源。
         bos1.flush();
 
-
-        socket.close();
 
 
     }

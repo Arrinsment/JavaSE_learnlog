@@ -10,6 +10,8 @@ public class convertstreamDemo1 {
 
         //这里主要去讲讲转换流,这里的convert就是转换的意思
         //转换流,简单去说就是字符流和字节流之间的一个媒介
+        //InputStreamReader 内部维护一个解码器，它根据你指定的字符集（比如 GBK、UTF-8），把读进来的字节按规则翻译成字符。
+        //把字节按照规则转换为字符
 
         /*
        利用转换流按照指定字符编码读取(第一种写法了解即可)
@@ -21,6 +23,7 @@ public class convertstreamDemo1 {
 
         //一.创建一个转换流对象
         //现在gbkfile是个编码GBK形式,然后读取过来这里是utf-8的形式会出现乱码,我们要自定GBK的方式去读取
+        //InputStreamReader 是把文件内容读取为字节流，然后按照 GBK 的形式去解码它。
         InputStreamReader isr=new InputStreamReader(new FileInputStream("D:\\Javacode\\JavaSE_learnlog\\Day26(IO流)\\src\\gbkfile.txt"),"GBK");
 
         //二.去读取数据

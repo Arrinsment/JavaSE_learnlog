@@ -13,7 +13,6 @@ public class LinkedHashSetDemo1 {
         Student s3=new Student("LIHUA",19);
         Student s4=new Student("jiangwan",17);
 
-
         //创建一个LinkedHashset
         LinkedHashSet<Student>lh=new LinkedHashSet<>();
         System.out.println(lh.add(s1));

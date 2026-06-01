@@ -4,69 +4,71 @@ import java.util.Scanner;
 
 public class Main {
 
-    static  Scanner sc =new Scanner(System.in);
-    static  int  L=sc.nextInt();
-    static  int  N=sc.nextInt();
-    static  int  M=sc.nextInt();
-    static  int []arr=new int[N+2];
-
+       static Scanner sc= new Scanner(System.in);
+       static int N=sc.nextInt();
+       static int M=sc.nextInt();
+       static int []arr=new int[N];
 
     public static void main(String[] args) {
 
-       //这又是一道就二分答案的题目
 
-        for (int i = 1; i <=N; i++) {
+    //这里是和的最大值是X,那么X+1也肯定满足,因为我去求最小的
+    //数学语言是m<=f(x),则m<=f(x)+N,N是一个自然数
+
+       /* 如果你能承受 5 块钱的成本完成任务，那么给你 6 块钱当然也能完成。
+        如果你 5 块钱不够，那么 4 块钱肯定更不够。
+        钱多，越容易买”的直觉。
+        钱理解为x轴,容易买,理解为y轴,钱越多就越容易买,这里就是去找钱刚刚可以买的地方
+        这个过程就是一个单调递增的过程,然后我的任务就是去找到最少的钱,然后让最大的那个也可以去买到,然后完成任务,这就是"最大值最小",因为这个过程是单增的才可以用二分法,去逼近答案
+*/
+    //本题的意思是分完段后去,找一个段和的X,然后这个段和的x比其他段和的都大, 这个段和x尽可能的小
+
+     //然后利用贪心去分段,就是我去看分的段数,是否满足题目给的段数即可
+
+        long max=0;
+        long total=0;
+        for (int i = 0; i < arr.length; i++) {
             arr[i]=sc.nextInt();
-        }
-        arr[0]=0;
-        arr[N+1]=L;
-
-        //这个逻辑是如果我的每块石头距离都大于d,那么一距离一定大于比d小的数
-        //因为d>=d-n(n>=0)
-        //然后相当于我们就是去找每个石头距离最大的那个距离即可
-        //利用二分答案去找,意思我提前先去猜一个答案,就是mid,第一个就是猜测的d,然后后续的都是
-        //不断逼进的结果,直到正确答案
-
-        //这就是二分答案：猜答案，验证，调整范围，直到找到最优解。
-        //最短跳跃距离的最大值。
-
-        int left=1;
-        //最短是1
-        //最长的是L
-        int right=L;
-        int ans=0;
-
-        while(left<=right){
-
-            int mid=(left+right)/2;
-            if(check(mid)){
-                //找到继续去找更大的
-                ans=mid;
-                left=mid+1;
-            }
-            else{
-                right=mid-1;
+            total+=arr[i];
+            if(arr[i]>max){
+                max=arr[i];
             }
         }
+
+        long left=max;
+        long right=total;
+        long ans=0;
+        while (left<=right) {
+
+            long mid = (left + right) / 2;
+            if (check(mid)) {
+
+                //这里最好去想,钱买东西那个单调图
+                ans = mid;
+                right = mid - 1;
+            } else {
+                left = mid + 1;
+            }
+        }
+
         System.out.println(ans);
-
     }
 
-    public static  boolean check(int d){
+    public static boolean check(long d){
 
-        int remove=0;
-        int last=arr[0];
-        //第一块和最后一块石头不能够去移动的
-        for (int i = 1; i < arr.length; i++) {
-
-            if((arr[i]-last)<d){
-                remove++;
-            }
-            else {
-                //更新位置
-                last=arr[i];
+        long start=0;
+        long cnt=1;//初始段数为1,把第一段放在里面去
+        for (int i = 0; i < arr.length; i++) {
+            if(start+arr[i]>d){
+                //移动,分段加1,把当前的arr[i]分给下一段
+                cnt++;
+                start=arr[i];
+            }else {
+                start+=arr[i];
             }
         }
-         return  remove<=M;
+
+        return cnt<=M;//这里可以少分,然后我自己去分成题目满足的条件即可
     }
+
 }

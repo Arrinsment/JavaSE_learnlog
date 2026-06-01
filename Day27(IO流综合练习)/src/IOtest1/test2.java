@@ -30,7 +30,9 @@ public class test2 {
         System.out.println(boyNameTemplist);
         System.out.println(girlNameTemplist);
 
-
+        
         //后面的就差不多了
+
+
     }
 }

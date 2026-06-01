@@ -39,6 +39,7 @@ public class HahMapDemo3 {
             }
 
 
+
         //然后我们去遍历,
         System.out.println(hm);//不固定,{A=18, B=24, C=19, D=19}
 
@@ -52,6 +53,7 @@ public class HahMapDemo3 {
                 max=entry.getValue();
             }
         }
+
 
         for (Map.Entry<String, Integer> entry : entries) {
             if(max==entry.getValue()){

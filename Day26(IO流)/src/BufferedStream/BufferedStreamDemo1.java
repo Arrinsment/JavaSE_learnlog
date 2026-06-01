@@ -7,6 +7,9 @@ public class BufferedStreamDemo1 {
 
         //这里的这个Bufffer是缓冲区的含义
 
+        //“字符流的底层其实也是一个一个字节去读的，但读取、编码、解码的过程已经底层封装好了，你因此可以直接理解为读取的就是字符本身，不用去管底层的事情。”
+
+
         /*
          * 需求：
          *    利用字节缓冲流拷贝文件
@@ -34,6 +37,7 @@ public class BufferedStreamDemo1 {
         //三.关闭BufferInputStream资源,然后你创建对象的那些低级流也会去关闭
         bfo.close();
         bfi.close();
+
 
     }
 }
