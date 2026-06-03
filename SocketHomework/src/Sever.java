@@ -1,10 +1,12 @@
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
+import java.util.ArrayList;
 import java.util.Properties;
 
 public class Sever {
 
+    static ArrayList<Socket>list=new ArrayList<>();
     public static void main(String[] args) throws IOException {
 
         ServerSocket ss=new ServerSocket(10000);
@@ -26,6 +28,7 @@ public class Sever {
         }
         //假如一次性有多个用户去登录,每个用户就去对应一个线程即可
     }
+
 }
 class  MyRun implements Runnable{
       //注意我们这里传入进来的账号是和配置文件的账号去比较的
@@ -48,26 +51,22 @@ class  MyRun implements Runnable{
             e.printStackTrace();
         }
 
-
         String s = null;
         try {
-            //这里不是治标不治本吗?
-        //   while (true) {
-               s = br.readLine();
-               switch (s) {
-                   case "login" -> login(br);
-               }
-       //    }
+
+            //服务端处于一个不断接收的状态
+
+            while (true) {
+                s = br.readLine();
+                switch (s) {
+                    case "login" -> login(br);
+                }
+            }
         } catch (IOException e) {
             e.printStackTrace();
         }
         System.out.println(s);
 
-        try {
-            br.close();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 
     public  void login(BufferedReader br) throws IOException {
@@ -92,7 +91,12 @@ class  MyRun implements Runnable{
             String userpassworld =(String) properties.get(userName);
             if(passWorld.equals(userpassworld)){
                 Writemessage("1");
+                //通过类名去调用list方法,然后进行群发
+                Sever.list.add(socket);
                 talkall(br,userName);
+
+
+                //群发消息
 
             }else{
                 //用户名存在
@@ -103,17 +107,36 @@ class  MyRun implements Runnable{
         }
     }
 
-    private void talkall(BufferedReader br,String username) throws IOException {
+    public void talkall(BufferedReader br,String username) throws IOException {
 
-        String s=br.readLine();
-        System.out.println(username+"发送了一条消息"+s);
+            String s = br.readLine();
+            System.out.println(username + "发送了一条消息" + s);
 
+        for (Socket socket1 : Sever.list) {
+            Writemessage(socket1,username + "发送了一条消息" + s);
+        }
+
+    }
+
+    //进行一个方法重载
+    public void Writemessage(Socket socket, String s) throws IOException {
+        BufferedWriter bw=new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
+        bw.write(s);
+        //\n 的作用是“结束当前行，下次输入从下一行开头开始”,然后readline()读到换行符才停止
+        //如果没有换行符,readline 就一直读取,卡在那里了
+        bw.newLine();
+        bw.flush();
     }
 
     public  void Writemessage(String things) throws IOException {
         BufferedWriter bw=new BufferedWriter(new OutputStreamWriter(socket.getOutputStream()));
+
         bw.write(things);
+        //\n 的作用是“结束当前行，下次输入从下一行开头开始”,然后readline()读到换行符才停止
+        //如果没有换行符,readline 就一直读取,卡在那里了
+        bw.newLine();
         bw.flush();
+
     }
 
 }

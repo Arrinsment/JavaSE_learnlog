@@ -23,6 +23,9 @@ public class BufferedStreamDemo3 {
         //这里是直接去读一行 利用BufferReader
         BufferedReader bfr=new BufferedReader(new FileReader("D:\\Javacode\\JavaSE_learnlog\\Day26(IO流)\\src\\aaa.txt"));
 
+
+       //readLine() 每调用一次，读当前行，然后自动指向下一行。
+       //一行一行的依次去读取
        /*
         //直接去读取一行,只能一行,一行的去读取
         String s=bfr.readLine();

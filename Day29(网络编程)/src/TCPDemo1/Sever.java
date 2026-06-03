@@ -50,6 +50,8 @@ public class Sever {
 
         socket.close();
         is.close();
+        //然后is这个流和socket有关,就是包括在socket里面的
+        //其实直接关闭socket即可
 
 
 

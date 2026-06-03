@@ -32,10 +32,25 @@ public class Clint {
             os.write(S.getBytes());
         }
 
-        //要去打上一个关闭标记,因为在TCP中,你也不知道要多久,多久才真正输入完成,
-        //不像IO流的文件那样读取到末尾,就自动返回-1了
-
         socket.shutdownOutput();
+        //就是调用这个方法后服务端的read读取后,就返回-1,不在继续读取
+        //客户端                                    服务端
+        //   │                                         │
+        //   │  1. 发送数据（多次）                      │  2. read() 读取并打印
+        //   │ ─────────────────────────────────────→  │
+        //   │                                         │
+        //   │  3. 调用 shutdownOutput()                │
+        //   │ ─────────────────────────────────────→  │
+        //   │                                         │  4. read() 读完数据后，收到"发完了"信号
+        //   │                                         │      ↓
+        //   │                                         │  5. read() 返回 -1
+        //   │                                         │      ↓
+        //   │                                         │  6. 循环结束，继续执行后续代码
+
+
+        //假如这里你用的BuffedReader/BuffedWriter那么在shutdownOutput()中,那么read读取到的就是null
+
+
 
 
         BufferedReader br = new BufferedReader(new InputStreamReader(socket.getInputStream()));

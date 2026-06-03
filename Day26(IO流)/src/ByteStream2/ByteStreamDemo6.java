@@ -27,11 +27,10 @@ public class ByteStreamDemo6 {
             fos.write(bytes,0,len);
         }
 
+
         //先去调用的后去释放
         fis.close();
         fos.close();
-
-
 
 
     }

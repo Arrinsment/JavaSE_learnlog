@@ -49,6 +49,7 @@ public class ByteStreamDemo5 {
         //b中有a,b,c,d,e
         //[a,b]->(a,b被c,d覆盖)->[c,d]->(只读取到了一个e,e把c给覆盖了,但d没有)->[e,d],现在是c中是没有让你去读取的了,然后返回-1,还是->[e,d]
 
+
         //但很明显我希望我的最后只打印e,而不是ed,我可以利用String 里面的一个构造方法 String s4 =new String(bytes,0,len),从第0个开始读取,读取len个长度
 
 
@@ -56,7 +57,6 @@ public class ByteStreamDemo5 {
         System.out.println(len3);//1
         String s3=new String(bytes,0,len3);
         System.out.println(s3);//ed
-
 
         f.close();
     }
